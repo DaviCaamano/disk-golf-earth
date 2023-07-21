@@ -1,0 +1,76 @@
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+#dependencies
+node_modules
+
+#########   CLIENT   #########
+# dependencies
+packages/client/node_modules
+packages/client/.pnp
+packages/client/.pnp.js
+
+# testing
+packages/client/coverage
+
+# next.js
+packages/client/.next/
+packages/client/out/
+
+# production
+packages/client/build
+
+# misc
+packages/client/.DS_Store
+packages/client*.pem
+
+# debug
+packages/client/npm-debug.log*
+packages/client/yarn-debug.log*
+packages/client/yarn-error.log*
+
+# local env files
+.env*.local
+
+# vercel
+packages/client/.vercel
+
+# typescript
+packages/client/*.tsbuildinfo
+packages/client/next-env.d.ts
+
+#########   SERVER   #########
+# compiled output
+packages/server/dist
+packages/server/node_modules
+
+# Logs
+packages/server/logs
+packages/server/*.log
+packages/server/npm-debug.log*
+packages/server/pnpm-debug.log*
+packages/server/yarn-debug.log*
+packages/server/yarn-error.log*
+packages/server/lerna-debug.log*
+
+# OS
+packages/server/.DS_Store
+
+# Tests
+packages/server/coverage
+packages/server/.nyc_output
+

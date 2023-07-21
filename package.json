@@ -1,0 +1,28 @@
+{
+  "name": "disk-golf-earth",
+  "version": "1.0.0",
+  "description": "Monorepo for Disk-Golf-Earth",
+  "main": "index.js",
+  "repository": "https://github.com/DaviCaamano/disk-golf-earth",
+  "author": "Davi Caamano",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "private": true,
+  "scripts": {
+    "dev": "cross-env yarn workspace client dev & yarn workspace server dev",
+    "prod": "cross-env yarn workspace client prod",
+    "start": "cross-env yarn workspace client start",
+    "build": "cross-env yarn workspace client build",
+    "client": "cd packages/client",
+    "server": "cd packages/server"
+  },
+  "dependencies": {
+    "@types/supertest": "^2.0.12"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "typescript": "^5.1.6"
+  }
+}
