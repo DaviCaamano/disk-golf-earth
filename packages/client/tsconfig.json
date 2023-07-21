@@ -1,5 +1,4 @@
 {
-  "extends": "../../tsconfig.json",
   "compilerOptions": {
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
@@ -10,7 +9,7 @@
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
@@ -22,10 +21,8 @@
     ],
     "paths": {
       "@/*": ["./*"]
-    },
-    "allowUmdGlobalAccess": true,
-    "experimentalDecorators": true
+    }
   },
-  "include": ["../../@types/*.ts", "next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "../../types/**/*"],
   "exclude": ["node_modules"]
 }
