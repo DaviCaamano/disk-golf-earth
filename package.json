@@ -20,7 +20,9 @@
     "client:dev": "yarn workspace client dev",
     "server:dev": "yarn workspace server dev",
     "client:build": "yarn workspace client build",
-    "server:build": "yarn workspace server build"
+    "server:build": "yarn workspace server build",
+    "lint": "cross-env yarn workspace client lint && yarn workspace server lint",
+    "prettier": "prettier --write **/*.{ts,js,jsx,tsx}"
   },
   "dependencies": {
     "@types/supertest": "^2.0.12",
