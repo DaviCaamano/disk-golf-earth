@@ -1,12 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     reactStrictMode: true,
-    esmExperimental: 'loose',
-    api: {
-        bodyParser: {
-            sizeLimit: '1mb',
-        },
-    },
     images: {
         formats: ['image/avif', 'image/webp'],
     },

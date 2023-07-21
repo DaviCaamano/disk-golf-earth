@@ -11,7 +11,9 @@
   ],
   "private": true,
   "scripts": {
-    "dev": "cross-env yarn workspace client dev & yarn workspace server dev",
+    "addclient": "yarn workspace client add ",
+    "addserver": "yarn workspace server add ",
+    "dev": "concurrently --kill-others-on-fail \"yarn workspace client dev\" \"yarn workspace server dev\"",
     "prod": "cross-env yarn workspace client prod",
     "start": "cross-env yarn workspace client start",
     "build": "cross-env yarn workspace client build",
@@ -22,6 +24,7 @@
     "@types/supertest": "^2.0.12"
   },
   "devDependencies": {
+    "concurrently": "^8.2.0",
     "cross-env": "^7.0.3",
     "typescript": "^5.1.6"
   }
