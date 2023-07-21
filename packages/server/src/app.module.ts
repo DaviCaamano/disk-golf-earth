@@ -4,7 +4,6 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import nestConfigs from "../nest.config";
 
-console.log(nestConfigs());
 
 @Module({
   imports: [ConfigModule.forRoot({

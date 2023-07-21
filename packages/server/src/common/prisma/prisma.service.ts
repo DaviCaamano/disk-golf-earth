@@ -7,7 +7,7 @@ export abstract class DatabaseService
     implements OnModuleInit
 {
     protected constructor() {
-        super({datasources: { db: { url: process.env.DB_URL}}});
+        super({datasources: { db: { url: process.env.DATABASE_HOST}}});
     }
 
     onModuleInit() {

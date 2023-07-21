@@ -1,14 +1,20 @@
-import {ConfigFactory} from "@nestjs/config";
+import {ConfigObject} from "@nestjs/config/dist/types";
+import {envPath} from "../../constants/env";
 
 const DEFAULT_DB_PORT = 5432;
+const DEFAULT_SERVER_PORT = 3001;
 
-const nestConfigs: ConfigFactory =  () => {
-    console.log('process.env.SERVER_PORT', process.env.SERVER_PORT)
+type NestConfigFactory = ConfigObject & {
+    port: number
+}
+
+const nestConfigs: () => NestConfigFactory =  () => {
     return ({
-        envFilePath: '../../.env.local',
+        envFilePath: envPath,
         isGlobal: true,
+        port: process.env.SERVER_PORT? parseInt(process.env.SERVER_PORT, 10) : DEFAULT_SERVER_PORT,
         database: {
-            host: process.env.DB_URL,
+            host: process.env.DATABASE_HOST,
             port: process.env.DATABASE_PORT? parseInt(process.env.DATABASE_PORT, 10) : DEFAULT_DB_PORT
         }
     })

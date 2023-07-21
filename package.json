@@ -13,15 +13,18 @@
   "scripts": {
     "addclient": "yarn workspace client add ",
     "addserver": "yarn workspace server add ",
-    "dev": "concurrently --kill-others-on-fail \"yarn workspace client dev\" \"yarn workspace server dev\"",
-    "prod": "cross-env yarn workspace client prod",
-    "start": "cross-env yarn workspace client start",
-    "build": "cross-env yarn workspace client build",
-    "client": "cd packages/client",
-    "server": "cd packages/server"
+    "dev": "set NODE_ENV=LOCAL && concurrently --kill-others-on-fail \"yarn workspace client dev\" \"yarn workspace server dev\"",
+    "prod": "set NODE_ENV=PRODUCTION && yarn workspace client prod",
+    "start": "yarn workspace client start",
+    "build": "yarn workspace client build & yarn workspace server build",
+    "client:dev": "yarn workspace client dev",
+    "server:dev": "yarn workspace server dev",
+    "client:build": "yarn workspace client build",
+    "server:build": "yarn workspace server build"
   },
   "dependencies": {
-    "@types/supertest": "^2.0.12"
+    "@types/supertest": "^2.0.12",
+    "dotenv": "^16.3.1"
   },
   "devDependencies": {
     "concurrently": "^8.2.0",
